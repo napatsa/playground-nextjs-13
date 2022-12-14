@@ -1,0 +1,9 @@
+.pokemon {
+  margin-bottom: 16px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.pokemon:hover {
+  text-decoration: underline;
+}
