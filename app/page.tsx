@@ -15,12 +15,16 @@ export default async function Home({ searchParams }: any) {
     return <div className={styles.container}>NON SELECT</div>;
   }
 
-  const data = await getData(name);
+  const data = getData(name);
 
   return (
     <>
-      {/* @ts-ignore */}
-      <Detail data={data} />
+      <Suspense
+        fallback={<div className={styles.container}>Loading detail...</div>}
+      >
+        {/* @ts-ignore */}
+        <Detail data={data} />
+      </Suspense>
     </>
   );
 }
